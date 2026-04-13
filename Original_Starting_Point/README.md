@@ -35,6 +35,7 @@ These instructions will assume that you have the latest version of HomeAssistant
 - Line 2 Current (amps)
 - Line 2 Power (watts)
 - Total Combined Power (L1 + L2) (watts)
+- Total Combined Current (L1 + L2) (amps)
     <br><br />
 
 ### Future Updates

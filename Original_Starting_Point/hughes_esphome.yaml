@@ -73,6 +73,9 @@ sensor:
     combined_power:
       name: "Watchdog Power"
       accuracy_decimals: 0
+    combined_current:
+      name: "Watchdog Current"
+      accuracy_decimals: 1
     total_power:
       name: "Watchdog Cumulative Power Usage"
       accuracy_decimals: 1

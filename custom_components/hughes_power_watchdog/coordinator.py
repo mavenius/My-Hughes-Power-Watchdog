@@ -82,6 +82,7 @@ from .const import (
     SENSOR_COMBINED_POWER,
     SENSOR_CURRENT_L1,
     SENSOR_CURRENT_L2,
+    SENSOR_COMBINED_CURRENT,
     SENSOR_ERROR_CODE,
     SENSOR_ERROR_TEXT,
     SENSOR_POWER_L1,
@@ -1185,6 +1186,7 @@ class HughesPowerWatchdogCoordinator(DataUpdateCoordinator[dict[str, Any]]):
             power_l1 = self._line_1_data.get("power", 0)
             power_l2 = self._line_2_data.get("power", 0)
             data[SENSOR_COMBINED_POWER] = power_l1 + power_l2
+            data[SENSOR_COMBINED_CURRENT] = data[SENSOR_CURRENT_L1] + data[SENSOR_CURRENT_L2]
         else:
             # 30A unit - set Line 2 to None
             data[SENSOR_VOLTAGE_L2] = None
@@ -1192,6 +1194,7 @@ class HughesPowerWatchdogCoordinator(DataUpdateCoordinator[dict[str, Any]]):
             data[SENSOR_POWER_L2] = None
             # For 30A, combined power = Line 1 power
             data[SENSOR_COMBINED_POWER] = self._line_1_data.get("power")
+            data[SENSOR_COMBINED_CURRENT] = data[SENSOR_CURRENT_L1]
 
         # Error information
         data[SENSOR_ERROR_CODE] = self._error_code
