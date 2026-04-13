@@ -59,7 +59,7 @@ Starting with v0.6.0, the integration uses a **push-based model** for real-time 
 - **Line 2 Current** (amps)
 - **Line 2 Power** (watts)
 - **Total Combined Power** (L1 + L2, watts)
-- **Total Combined Current** (L1 + L2) (amps)
+- **Total Combined Current** (L1 + L2, amps)
 
 ### Controls
 - **Monitoring Switch** - Enable/disable the BLE connection. Turning monitoring off cleanly unsubscribes from notifications and disconnects, freeing the BLE connection slot (useful for ESPHome Bluetooth Proxy users with the default 3-slot limit). Turning it back on reconnects and resumes real-time data.
